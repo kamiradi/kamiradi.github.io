@@ -3,4 +3,7 @@ title: Proof by Scar Tissue
 description: Robotics and Learning
 github:
   is\_project\_page: false
+markdown: kramdown
+kramdown:
+  math_engine: mathjax
 

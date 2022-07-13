@@ -1,3 +1,7 @@
+---
+layout: post
+title: Linear Algebra
+---
 # Linear Algebra
 
 Resource: https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/
@@ -10,11 +14,9 @@ Type: Foundation, Math
 
 The concepts in these notes are from the *Introduction to Linear Algebra* textbook by Gilbert Strang. I’ll also be taking intuitions developed by Grant Sanderson in his *Linear Algebra* video series. These intuitions are particularly important and useful in Robotics. The recipes and algorithms I’ll leave for the textbook, and refer you to the corresponding sections.
 
-# What are Vectors?
-
----
 
 ## Vectors and Linear Combination
+---
 
 Vectors are a collection of numbers, represented as a column. They usually represent a set of physical quantities, coordinates of a frame of reference in robotics(Physics), or stock prices for different companies(Data Science). In general, a vector is a form of abstraction in this regard, and we are trying to dig out general principles that can apply all over. In Linear Algebra, the most atomic entity is the column vector
 

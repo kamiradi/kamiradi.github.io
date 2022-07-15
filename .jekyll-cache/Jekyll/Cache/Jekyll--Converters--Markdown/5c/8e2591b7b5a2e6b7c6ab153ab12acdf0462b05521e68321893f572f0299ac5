@@ -1,0 +1,46 @@
+I"�<h1 id="determinants">Determinants</h1>
+
+<p>Why do we need determinants - to understand Eigenvalues. The matrix is invertible if the determinant is non-zero</p>
+
+<h2 id="properties-of-determinants">Properties of Determinants</h2>
+
+\[det(I) = 1\\
+det(exchange\_rows(A)) =-1*det(A)\]
+
+<p>The textbook has all the properties and the BIG formula for the calculation of determinant matrix. These can be referred to. I’ll try and put down the other basic intuitions.</p>
+
+<p>The recipe to calculate the determinant of a matrix</p>
+
+<ul>
+  <li>Perform the $LU$ factorisation.</li>
+  <li>Multiply the diagonal elements of the matrix $U$→ that should be the determinant of the matrix.</li>
+  <li>A 0 determinant indicates that the original matrix is singular, non-zero determinant indicates that the matrix is invertible.</li>
+  <li>Again the determinant is the product of the pivots.</li>
+</ul>
+
+<p>What is a cofactor of $a_{ij}$?</p>
+
+<p>It is the determinant of the $n-1$ matrix when row and columns $i, j$ are erased. $i+j$ even then the sign is plus.</p>
+
+<h2 id="applications-of-the-determinant-cramers-rule-inverse-and-volume">Applications of the determinant: Cramer’s rule, Inverse, and volume</h2>
+
+<p>Using the determinants, what is the formula for the inverse of a matrix?</p>
+
+\[A^{-1} = \frac{C^{T}}{det(A)}\]
+
+<p>Where $C^{T}$ is the transpose of the cofactor matrix. $C$ is the matrix when you replace every element in $A$ with its correponding cofactor.</p>
+
+<p>How does this appy to $Ax=b$. Cramer’s rule.</p>
+
+\[x = \frac{C^{T}b}{det(A)} \\
+x_{i} = \frac{det(A_{i})}{det(A)}\]
+
+<p>Lets talk about determinant of a matrix being equated to the volume.</p>
+
+<blockquote>
+  <p>Determinant of a matrix is physically equal to the volume of the box enclosed by the columns of the matrix.</p>
+
+</blockquote>
+
+<p>Then what does 0 determinant mean in this sense? It means it is not a full column rank matrix. However, there is an idea of a area of a subspace represented by the independent columns that remain in the matrix.</p>
+:ET

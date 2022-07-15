@@ -1,0 +1,17 @@
+toc: 
+  - title: Linear Algebra for Robotics
+    Chapters:
+      - page: Introduction
+        url: /la/Introduction.html
+      - page: Solving Linear Equations
+        url: /la/Solving_Linear_Equations.md
+      - page: Vector spaces and subspaces
+        url: /la/Vector_Spaces_and_Subspaces.md
+      - page: Orthogonality
+        url: /la/Orthogonality.md
+      - page: Determinants
+        url: /la/Determinants.md
+      - page: Eigenvectors and Eigenvalues
+        url: /la/Eigenvectors_and_Eigenvalues.md
+      - page: Singular Value Decomposition
+        url: /la/Singular_Value_decompostion.md

@@ -1,0 +1,31 @@
+I"H<p>I am a Robotics researcher. I program robots to learn dexterous human physical behaviour. Turns out this is difficult! This part of the digital world is where I will catalogue my findings. Expect a graveyard of failed experiments and ideas, or at the least - scar tissue.</p>
+
+<!--<h2>{"title"=>"Linear Algebra for Robotics", "Chapters"=>[{"page"=>"Introduction", "url"=>"/Introduction.md"}, {"page"=>"Solving Linear Equations", "url"=>"/Solving_Linear_Equations.md"}, {"page"=>"Vector sapces and subspaces", "url"=>"/Vector_Spaces_and_Subspaces.md"}, {"page"=>"Orthogonality", "url"=>"/Orthogonality.md"}, {"page"=>"Determinants", "url"=>"/Determinants.md"}, {"page"=>"Eigenvectors and Eigenvalues", "url"=>"/Eigenvectors_and_Eigenvalues.md"}, {"page"=>"Singular Value Decomposition", "url"=>"/Singular_Value_decompostion.md"}]}</h2>-->
+<!--<ul>
+    
+</ul>-->
+<ul>
+  
+    <h3>Linear Algebra for Robotics</h3>
+      <ul>
+        
+          <li><a href="/Introduction.md">Introduction</a></li>
+        
+          <li><a href="/Solving_Linear_Equations.md">Solving Linear Equations</a></li>
+        
+          <li><a href="/Vector_Spaces_and_Subspaces.md">Vector sapces and subspaces</a></li>
+        
+          <li><a href="/Orthogonality.md">Orthogonality</a></li>
+        
+          <li><a href="/Determinants.md">Determinants</a></li>
+        
+          <li><a href="/Eigenvectors_and_Eigenvalues.md">Eigenvectors and Eigenvalues</a></li>
+        
+          <li><a href="/Singular_Value_decompostion.md">Singular Value Decomposition</a></li>
+        
+      </ul>
+  
+</ul>
+
+<p>Content coming soon ..</p>
+:ET

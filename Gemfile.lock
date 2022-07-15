@@ -68,6 +68,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll-theme-minimal
+  kramdown
   webrick
 
 BUNDLED WITH

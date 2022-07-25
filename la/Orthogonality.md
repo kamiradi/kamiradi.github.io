@@ -1,7 +1,7 @@
-
 ---
 layout: default	
 ---
+
 # Orthogonality
 
 The first concept is that of orthogonality. Two vectors are said to be orthogonal if their dot product is 0.

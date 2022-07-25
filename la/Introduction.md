@@ -1,5 +1,5 @@
 ---
-layout: default	
+layout: default
 ---
 # Chap 1: Introduction
 

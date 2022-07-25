@@ -4,14 +4,14 @@ toc:
       - page: Introduction
         url: /la/Introduction.html
       - page: Solving Linear Equations
-        url: /la/Solving_Linear_Equations.md
+        url: /la/Solving_Linear_Equations.html
       - page: Vector spaces and subspaces
-        url: /la/Vector_Spaces_and_Subspaces.md
+        url: /la/Vector_Spaces_and_Subspaces.html
       - page: Orthogonality
-        url: /la/Orthogonality.md
+        url: /la/Orthogonality.html 
       - page: Determinants
-        url: /la/Determinants.md
+        url: /la/Determinants.html
       - page: Eigenvectors and Eigenvalues
-        url: /la/Eigenvectors_and_Eigenvalues.md
+        url: /la/Eigenvectors_and_Eigenvalues.html
       - page: Singular Value Decomposition
-        url: /la/Singular_Value_Decomposition.md
+        url: /la/Singular_Value_Decomposition.html

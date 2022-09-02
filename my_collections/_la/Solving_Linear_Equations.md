@@ -1,5 +1,6 @@
 ---
 layout: default	
+title: "Solving Linear Equations"
 ---
 # Solving Linear Equations
 

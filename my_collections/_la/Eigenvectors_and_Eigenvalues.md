@@ -1,5 +1,6 @@
 ---
 layout: default	
+title: "Eigenvalues and Eigenvectors"
 ---
 # Eigenvectors and Eigenvalues
 

@@ -1,5 +1,6 @@
 ---
 layout: default	
+title: "Singular Value Decomposition"
 ---
 # Singular Value Decomposition
 

@@ -1,9 +1,22 @@
 theme: jekyll-theme-minimal
 title: Proof by Scar Tissue
 description: Robotics and Learning
+lang: en-US
 github:
   is\_project\_page: false
 markdown: kramdown
 kramdown:
   math_engine: mathjax
-
+plugins:
+  - jekyll-index-pages
+index_pages:
+  posts:
+    title: Post Listing Page Title
+    excerpt: Post Listing page excerpt
+    per_page: 20
+    permalink: /blog/
+    layout: default
+collections_dir: my_collections
+collections:
+  la:
+    output: true

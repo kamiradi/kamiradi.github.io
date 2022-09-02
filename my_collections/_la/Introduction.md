@@ -1,5 +1,6 @@
 ---
 layout: default
+title: "Introduction"
 ---
 # Chap 1: Introduction
 

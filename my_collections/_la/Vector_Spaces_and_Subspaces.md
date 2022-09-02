@@ -1,6 +1,6 @@
-
 ---
 layout: default	
+title: "Vector Spaces and Subspaces"
 ---
 # Vector Spaces and Subspaces
 

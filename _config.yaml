@@ -20,3 +20,6 @@ collections_dir: my_collections
 collections:
   la:
     output: true
+header_pages:
+  - index.md
+  - about.md

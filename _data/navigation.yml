@@ -7,5 +7,6 @@ main:
   - title: "Publications"
     url: /publications/
 
-  - title: "CV"
-    url: /cv/
+  # Uncomment when the CV is ready.
+  # - title: "CV"
+  #   url: /cv/

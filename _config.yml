@@ -9,11 +9,11 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "Aditya Kamireddypalli / Site Title"
+title                    : "Aditya Kamireddypalli"
 title_separator          : "-"
 name                     : &name "Aditya Kamireddypalli"
-description              : &description "Robotics Researcher"
-url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
+description              : &description "Robot learning and contact-rich manipulation"
+url                      : https://kamiradi.github.io
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "kamiradi/kamiradi.github.io"
 
@@ -25,8 +25,8 @@ author:
   avatar           : "profile.png"
   name             : "Aditya Kamireddypalli"
   pronouns         : # example: "she/her"  
-  bio              : "Trying to get robots to be less conservative while making contact with the environment"
-  location         : "Earth"
+  bio              : "Robot learning · Contact-rich manipulation · Probabilistic inference"
+  location         : "Edinburgh, UK"
   employer         : "University of Edinburgh"
   uri              : # URL
   email            : "a.kamireddypalli@sms.ed.ac.uk" 

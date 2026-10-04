@@ -3,7 +3,7 @@ const { publication }=Astro.props;
 const {key,title,authors,venue,year,preview,links,abstract,bibtex}=publication.data;
 ---
 <article class="pub" id={key}>
-  <div class="pub-side">{preview ? <img class="teaser" src={preview} alt="" loading="lazy"/> : <div class="placeholder">{year}</div>}</div>
+  <div class="pub-side">{preview ? <img class="teaser" src={preview} alt={`${title} preview`} loading="lazy"/> : <div class="placeholder">{year}</div>}</div>
   <div>
     <h3>{title}</h3>
     <p class="authors">{authors.map((a,i)=><span>{a.self?<strong>{a.name}</strong>:a.name}{i<authors.length-1?', ':''}</span>)}</p>
@@ -12,5 +12,5 @@ const {key,title,authors,venue,year,preview,links,abstract,bibtex}=publication.d
   </div>
 </article>
 <style>
-.pub{display:grid;grid-template-columns:200px 1fr;gap:1.5rem;padding-block:1.5rem;border-bottom:1px solid var(--border)}.teaser,.placeholder{width:100%;aspect-ratio:4/3;object-fit:contain;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius)}.placeholder{display:grid;place-items:center;color:var(--text-muted);font-size:1.3rem}.authors{font-size:.925rem;margin-top:.3rem}.links{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.7rem}.links details{display:inline}.links details p,.links pre{margin-top:.7rem;background:var(--surface);padding:.7rem;max-width:60ch;white-space:pre-wrap}summary{cursor:pointer;list-style:none}@media(max-width:640px){.pub{grid-template-columns:1fr}.pub-side{max-width:280px}}
+.pub{display:grid;grid-template-columns:220px 1fr;gap:1.5rem;padding-block:1.5rem;border-bottom:1px solid var(--border);align-items:start}.pub-side{width:220px;height:150px;display:flex;align-items:center;justify-content:center}.teaser{width:100%;height:100%;object-fit:contain;border-radius:var(--radius)}.placeholder{width:100%;height:100%;display:grid;place-items:center;color:var(--text-muted);font-size:1.3rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius)}.authors{font-size:.925rem;margin-top:.3rem}.links{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.7rem}.links details{display:inline}.links details p,.links pre{margin-top:.7rem;background:var(--surface);padding:.7rem;max-width:60ch;white-space:pre-wrap}summary{cursor:pointer;list-style:none}@media(max-width:640px){.pub{grid-template-columns:1fr}.pub-side{width:100%;max-width:320px;height:180px}}
 </style>

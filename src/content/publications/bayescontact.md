@@ -9,7 +9,7 @@ authors:
   - { name: "Russell Buchanan" }
   - { name: "Sethu Vijayakumar" }
   - { name: "Subramanian Ramamoorthy" }
-venue: "Preprint"
+venue: "Under review"
 year: 2026
 selected: true
 preview: "/publications/bayescontact-fig1.png"

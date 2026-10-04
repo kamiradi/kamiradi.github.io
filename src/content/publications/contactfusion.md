@@ -8,10 +8,11 @@ authors:
   - { name: "Russell Buchanan" }
   - { name: "Sethu Vijayakumar" }
   - { name: "Subramanian Ramamoorthy" }
-venue: "Preprint"
-year: 2025
+venue: "IROS 2026"
+year: 2026
 selected: true
 links:
   arxiv: "https://arxiv.org/abs/2503.16592"
   code: "https://github.com/kamiradi/contact_fusion"
+  venue: "https://2026.ieee-iros.org/"
 ---

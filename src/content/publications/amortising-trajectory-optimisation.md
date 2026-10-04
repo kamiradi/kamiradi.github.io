@@ -10,7 +10,7 @@ authors:
   - { name: "Hashim Al-Obaidi" }
   - { name: "Steve Tonneau" }
   - { name: "Michael Mistry" }
-venue: "Preprint"
+venue: "Under review"
 year: 2026
 selected: true
 tldr: "Amortises contact-rich trajectory optimisation into a residual MPC policy using implicit contact differentiation."

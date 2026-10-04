@@ -13,6 +13,7 @@ venue: "Preprint"
 year: 2026
 selected: true
 preview: "/publications/bayescontact-fig1.png"
+tldr: "Uses vision and contact with simulation-based Bayesian inference to resolve uncertain object pose for manipulation."
 links:
   arxiv: "https://arxiv.org/abs/2607.16123"
   code: "https://github.com/kamiradi/bayes-contact"

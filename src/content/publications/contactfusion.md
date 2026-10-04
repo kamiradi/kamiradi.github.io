@@ -6,6 +6,7 @@ authors:
   - { name: "Aditya Kamireddypalli", self: true }
   - { name: "Joao Moura" }
   - { name: "Russell Buchanan" }
+  - { name: "Matias Mattamala" }
   - { name: "Sethu Vijayakumar" }
   - { name: "Subramanian Ramamoorthy" }
 venue: "IEEE/RSJ IROS 2026, Pittsburgh, USA"

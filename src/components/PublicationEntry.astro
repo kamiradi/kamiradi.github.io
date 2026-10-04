@@ -7,7 +7,7 @@ const {key,title,authors,venue,year,preview,links,abstract,bibtex}=publication.d
   <div>
     <h3>{title}</h3>
     <p class="authors">{authors.map((a,i)=><span>{a.self?<strong>{a.name}</strong>:a.name}{i<authors.length-1?', ':''}</span>)}</p>
-    <p class="muted"><em>{venue}</em> {year}</p>
+    <p class="muted"><em>{venue}</em></p>
     <div class="links">{links.arxiv&&<a class="btn" href={links.arxiv}>arXiv</a>}{links.code&&<a class="btn" href={links.code}>Code</a>}{links.website&&<a class="btn" href={links.website}>Webpage</a>}{links.venue&&<a class="btn" href={links.venue}>{venue}</a>}{abstract&&<details><summary class="btn">Abs</summary><p>{abstract}</p></details>}{bibtex&&<details><summary class="btn">Bib</summary><pre>{bibtex}</pre></details>}</div>
   </div>
 </article>

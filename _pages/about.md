@@ -15,8 +15,6 @@ A recurring question in my work is: **How can a robot use contact not only to ma
 
 My current research explores this question through contact-aware perception, Bayesian inference, and model-predictive control for fine manipulation tasks such as robotic insertion.
 
-[Projects](/portfolio/) · [Publications](/publications/) · [GitHub](https://github.com/kamiradi)
-
 ## Publications
 
 {% include publications-list.html %}

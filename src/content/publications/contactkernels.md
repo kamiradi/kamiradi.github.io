@@ -12,5 +12,6 @@ authors:
 venue: "Preprint"
 year: 2026
 selected: true
+tldr: "Uses sensed contact to adapt sampling-based MPC proposals, improving contact-rich insertion under uncertainty."
 links: {}
 ---

@@ -9,7 +9,7 @@ authors:
   - { name: "Sethu Vijayakumar" }
   - { name: "Steve Tonneau" }
   - { name: "Subramanian Ramamoorthy" }
-venue: "Preprint"
+venue: "Under review"
 year: 2026
 selected: true
 tldr: "Uses sensed contact to adapt sampling-based MPC proposals, improving contact-rich insertion under uncertainty."

@@ -19,6 +19,7 @@ const publications = defineCollection({
       arxiv: z.string().optional(),
       code: z.string().optional(),
       website: z.string().optional(),
+      venue: z.string().optional(),
     }).default({}),
     abstract: z.string().optional(),
     bibtex: z.string().optional(),

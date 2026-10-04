@@ -17,6 +17,10 @@ My current research explores this question through contact-aware perception, Bay
 
 [Projects](/portfolio/) · [Publications](/publications/) · [GitHub](https://github.com/kamiradi)
 
+## Publications
+
+{% include publications-list.html %}
+
 ## Talks
 
 ### ROSCon 2024 — Integrating Drake into MoveIt

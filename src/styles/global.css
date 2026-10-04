@@ -1,0 +1,10 @@
+@import './tokens.css';
+*,*::before,*::after{box-sizing:border-box}*{margin:0}
+img,svg,video{display:block;max-width:100%;height:auto}
+body{font-family:var(--font-sans);font-size:1rem;line-height:1.65;color:var(--text);background:var(--bg);min-height:100vh;display:flex;flex-direction:column}
+main{flex:1} h1,h2,h3{font-weight:600;line-height:1.25;letter-spacing:-.01em} h1{font-size:clamp(1.6rem,1.2rem + 1.6vw,2.1rem)} h2{font-size:1.45rem} h3{font-size:1.05rem}
+a{color:var(--accent);text-decoration:none}a:hover{color:var(--accent-hover);text-decoration:underline;text-underline-offset:3px}
+.shell{max-width:var(--shell-max);margin-inline:auto;padding-inline:clamp(1rem,4vw,1.5rem);width:100%}
+.prose{max-width:var(--prose-max)}.prose p{margin-block:1em}.muted{color:var(--text-muted)}.page-title{margin-block:2.5rem 1.5rem}
+.btn{display:inline-flex;align-items:center;font:inherit;font-size:.84rem;line-height:1.4;color:var(--text);border:1px solid var(--border);border-radius:var(--radius);padding:.28rem .65rem}
+.btn:hover{background:var(--accent-tint);text-decoration:none}

@@ -1,0 +1,28 @@
+:root {
+  --radius: 3px;
+  --border-w: 1px;
+  --shell-max: 1100px;
+  --prose-max: 70ch;
+  --font-sans: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: ui-monospace, Menlo, Consolas, monospace;
+  --bg: rgb(250, 251, 253);
+  --surface: rgb(241, 244, 248);
+  --text: rgb(22, 24, 29);
+  --text-muted: rgb(85, 92, 104);
+  --border: rgb(222, 227, 234);
+  --accent: rgb(0, 54, 159);
+  --accent-hover: rgb(0, 42, 128);
+  --accent-tint: rgb(233, 238, 249);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: rgb(18, 21, 27);
+    --surface: rgb(26, 30, 38);
+    --text: rgb(232, 234, 238);
+    --text-muted: rgb(162, 168, 180);
+    --border: rgb(42, 47, 58);
+    --accent: rgb(143, 169, 242);
+    --accent-hover: rgb(170, 189, 246);
+    --accent-tint: rgb(31, 37, 55);
+  }
+}

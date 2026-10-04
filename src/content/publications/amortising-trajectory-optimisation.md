@@ -1,6 +1,6 @@
 ---
 key: amortising-trajectory-optimisation
-order: 1
+order: 5
 title: "Amortising Trajectory Optimisation for Residual MPC via Implicit Contact Differentiation"
 authors:
   - { name: "Daniel Layeghi" }

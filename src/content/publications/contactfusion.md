@@ -17,4 +17,5 @@ badge: "IROS 2026"
 links:
   arxiv: "https://arxiv.org/abs/2503.16592"
   code: "https://github.com/kamiradi/contact_fusion"
+  website: "https://kamiradi.github.io/contact_fusion/"
 ---

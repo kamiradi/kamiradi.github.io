@@ -1,0 +1,9 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PublicationEntry from '../../components/PublicationEntry.astro';
+const pubs=(await getCollection('publications')).sort((a,b)=>b.data.year-a.data.year||a.data.order-b.data.order);
+const years=[...new Set(pubs.map(p=>p.data.year))];
+---
+<BaseLayout title="Publications"><h1 class="page-title">Publications</h1>{years.map(year=><section><h2>{year}</h2>{pubs.filter(p=>p.data.year===year).map(pub=><PublicationEntry publication={pub}/>)}</section>)}</BaseLayout>
+<style>section{margin-top:1.5rem}section h2{border-bottom:1px solid var(--border);padding-bottom:.4rem}</style>

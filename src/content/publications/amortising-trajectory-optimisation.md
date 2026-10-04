@@ -13,6 +13,7 @@ authors:
 venue: "Preprint"
 year: 2026
 selected: true
+tldr: "Amortises contact-rich trajectory optimisation into a residual MPC policy using implicit contact differentiation."
 links:
   arxiv: "https://arxiv.org/abs/2607.24959"
 ---

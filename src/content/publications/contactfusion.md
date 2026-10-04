@@ -8,7 +8,7 @@ authors:
   - { name: "Russell Buchanan" }
   - { name: "Sethu Vijayakumar" }
   - { name: "Subramanian Ramamoorthy" }
-venue: "Preprint"
+venue: "IEEE/RSJ IROS 2026, Pittsburgh, USA"
 year: 2025
 selected: true
 preview: "/publications/contactfusion-fig1.svg"

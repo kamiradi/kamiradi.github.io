@@ -21,7 +21,9 @@ My current research explores this question through contact-aware perception, Bay
 
 ### ROSCon 2024 — Integrating Drake into MoveIt
 
-I contributed to integrating **Drake** into **MoveIt**, working with **Sebastian Castro** and **Sebastian Jahr**, and presented the work at **ROSCon 2024**.
+Part of my broader work on contact-rich manipulation is enabling robots to plan and execute motions safely around obstacles. **Trajectory optimization and model-predictive control (MPC)** provide powerful tools for reasoning about these motions.
+
+As part of this effort, I contributed to integrating **Drake's optimization tools into MoveIt**, working with **Sebastian Castro** and **Sebastian Jahr**. We presented this work at **ROSCon 2024**.
 
 <div style="padding:56.25% 0 0 0;position:relative;">
   <iframe src="https://player.vimeo.com/video/1024970427" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="ROSCon 2024 — Integrating Drake into MoveIt"></iframe>

@@ -11,7 +11,7 @@ authors:
 venue: "IEEE/RSJ IROS 2026"
 year: 2025
 selected: true
-preview: "https://raw.githubusercontent.com/kamiradi/contact_fusion/main/header_figure.svg"
+preview: "/publications/contactfusion-fig1.svg"
 links:
   arxiv: "https://arxiv.org/abs/2503.16592"
   code: "https://github.com/kamiradi/contact_fusion"

@@ -1,0 +1,9 @@
+---
+import { SITE } from '../config/site';
+const items=[{label:'about',href:'/'},{label:'publications',href:'/publications/'}];
+const current=Astro.url.pathname;
+---
+<header class="nav-bar"><nav class="shell nav-inner"><a class="wordmark" href="/"><strong>{SITE.firstName}</strong> {SITE.restName}</a><div class="nav-links">{items.map(item=><a href={item.href} class:list={['nav-link',(item.href==='/'?current==='/':current.startsWith(item.href))&&'active']}>{item.label}</a>)}</div></nav></header>
+<style>
+.nav-bar{border-bottom:1px solid var(--border)}.nav-inner{display:flex;justify-content:space-between;align-items:center;padding-block:.85rem}.wordmark{color:var(--text);font-size:1.05rem}.wordmark strong{font-weight:600}.nav-links{display:flex;gap:.35rem}.nav-link{font-size:.9rem;font-weight:500;color:var(--text-muted);padding:.25rem .55rem}.nav-link.active{color:var(--accent);background:var(--surface);border-radius:var(--radius)}
+</style>

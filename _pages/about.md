@@ -16,3 +16,13 @@ A recurring question in my work is: **How can a robot use contact not only to ma
 My current research explores this question through contact-aware perception, Bayesian inference, and model-predictive control for fine manipulation tasks such as robotic insertion.
 
 [Projects](/portfolio/) · [Publications](/publications/) · [GitHub](https://github.com/kamiradi)
+
+## Talks
+
+### ROSCon 2024 — Integrating Drake into MoveIt
+
+I contributed to integrating **Drake** into **MoveIt**, working with **Sebastian Castro** and **Sebastian Jahr**, and presented the work at **ROSCon 2024**.
+
+<div style="padding:56.25% 0 0 0;position:relative;">
+  <iframe src="https://player.vimeo.com/video/1024970427" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="ROSCon 2024 — Integrating Drake into MoveIt"></iframe>
+</div>

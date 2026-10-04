@@ -15,6 +15,8 @@ const publications = defineCollection({
     year: z.number().int(),
     selected: z.boolean().default(false),
     preview: z.string().optional(),
+    tldr: z.string().optional(),
+    badge: z.string().optional(),
     links: z.object({
       arxiv: z.string().optional(),
       code: z.string().optional(),

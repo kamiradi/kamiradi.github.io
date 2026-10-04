@@ -8,7 +8,7 @@ authors:
   - { name: "Russell Buchanan" }
   - { name: "Sethu Vijayakumar" }
   - { name: "Subramanian Ramamoorthy" }
-venue: "IROS 2025"
+venue: "IEEE/RSJ IROS 2026"
 year: 2025
 selected: true
 preview: "https://raw.githubusercontent.com/kamiradi/contact_fusion/main/header_figure.svg"

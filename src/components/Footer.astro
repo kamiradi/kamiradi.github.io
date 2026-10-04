@@ -1,0 +1,6 @@
+---
+import { SITE } from '../config/site';
+const year=new Date().getFullYear();
+---
+<footer><div class="shell">&copy; {year} {SITE.title}. Built with <a href="https://astro.build/">Astro</a>.</div></footer>
+<style>footer{border-top:1px solid var(--border);margin-top:4rem}.shell{padding-block:1.25rem;font-size:.85rem;color:var(--text-muted)}</style>

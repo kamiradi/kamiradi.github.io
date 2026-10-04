@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PublicationEntry from '../components/PublicationEntry.astro';
+import { SITE } from '../config/site';
+import { Content as Intro } from '../data/home-intro.md';
+const pubs=(await getCollection('publications',({data})=>data.selected)).sort((a,b)=>a.data.order-b.data.order);
+---
+<BaseLayout>
+<header class="home-header"><h1><strong>{SITE.firstName}</strong> {SITE.restName}</h1><p class="muted">{SITE.subtitle}</p></header>
+<div class="home-grid">
+<aside><img class="photo" src="/profile.jpeg" alt="Aditya Kamireddypalli"/><p class="home-links"><a href={`mailto:${SITE.email}`}>Email</a> | <a href={SITE.links.googleScholar}>Google Scholar</a><br/><a href={SITE.links.github}>GitHub</a></p></aside>
+<div class="prose"><Intro/></div>
+</div>
+<section><h2>Featured publications</h2>{pubs.map(pub=><PublicationEntry publication={pub}/>)}</section>
+<section><h2>Talks</h2><h3>ROSCon 2024 — Integrating Drake into MoveIt</h3><div class="prose"><p>Part of my broader work on contact-rich manipulation is enabling robots to plan and execute motions safely around obstacles. Trajectory optimization and model-predictive control provide powerful tools for reasoning about these motions.</p><p>As part of this effort, I contributed to integrating Drake's optimization tools into MoveIt, working with Sebastian Castro and Sebastian Jahr. We presented this work at ROSCon 2024.</p></div><div class="video"><iframe src="https://player.vimeo.com/video/1024970427" title="ROSCon 2024 — Integrating Drake into MoveIt" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div></section>
+</BaseLayout>
+<style>
+.home-header{margin-block:2.5rem 1.5rem}.home-header h1{font-weight:400}.home-grid{display:grid;grid-template-columns:280px 1fr;gap:2.5rem;align-items:start}.photo{width:100%;border-radius:15px}.home-links{text-align:center;margin-top:.9rem;line-height:1.9}section{margin-top:3rem}section h2{margin-bottom:1rem}.video{position:relative;padding-top:56.25%;margin-top:.5rem}.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}@media(max-width:780px){.home-grid{grid-template-columns:1fr}.photo,aside{max-width:280px;margin-inline:auto}}
+</style>

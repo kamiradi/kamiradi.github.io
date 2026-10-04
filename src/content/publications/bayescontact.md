@@ -12,6 +12,7 @@ authors:
 venue: "Preprint"
 year: 2026
 selected: true
+preview: "https://raw.githubusercontent.com/kamiradi/bayes_contact_paper/main/title_figure.png"
 links:
   arxiv: "https://arxiv.org/abs/2607.16123"
   code: "https://github.com/kamiradi/bayes-contact"

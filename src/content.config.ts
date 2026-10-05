@@ -10,6 +10,7 @@ const publications = defineCollection({
     authors: z.array(z.object({
       name: z.string(),
       self: z.boolean().default(false),
+      equal: z.boolean().default(false),
     })).min(1),
     venue: z.string(),
     year: z.number().int(),

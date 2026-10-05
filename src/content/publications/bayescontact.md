@@ -17,4 +17,5 @@ tldr: "Uses vision and contact with simulation-based Bayesian inference to resol
 links:
   arxiv: "https://arxiv.org/abs/2607.16123"
   code: "https://github.com/kamiradi/bayes-contact"
+  workshop: "https://openreview.net/pdf?id=rFLQFn6v36"
 ---

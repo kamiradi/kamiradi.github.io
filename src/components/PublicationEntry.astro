@@ -1,17 +1,19 @@
 ---
 const { publication }=Astro.props;
 const {key,title,authors,venue,year,preview,tldr,badge,links,abstract,bibtex}=publication.data;
+const hasEqualContribution=authors.some(a=>a.equal);
 ---
 <article class="pub" id={key}>
   <div class="pub-side">{preview ? <img class="teaser" src={preview} alt={`${title} preview`} loading="lazy"/> : <div class="placeholder">{year}</div>}</div>
   <div>
     <h3>{title}</h3>
-    <p class="authors">{authors.map((a,i)=><span>{a.self?<strong>{a.name}</strong>:a.name}{i<authors.length-1?', ':''}</span>)}</p>
+    <p class="authors">{authors.map((a,i)=><span>{a.self?<strong>{a.name}</strong>:a.name}{a.equal?'*':''}{i<authors.length-1?', ':''}</span>)}</p>
+    {hasEqualContribution&&<p class="contribution">* Equal contribution</p>}
     <p class="muted"><em>{venue}</em></p>
     {tldr&&<p class="tldr"><strong>TL;DR:</strong> {tldr}</p>}
     <div class="links">{links.arxiv&&<a class="btn" href={links.arxiv}>arXiv</a>}{links.code&&<a class="btn" href={links.code}>Code</a>}{links.website&&<a class="btn" href={links.website}>Webpage</a>}{links.workshop&&<a class="btn" href={links.workshop}>ICRA 2026 Workshop</a>}{badge&&<span class="btn badge">{badge}</span>}{abstract&&<details><summary class="btn">Abs</summary><p>{abstract}</p></details>}{bibtex&&<details><summary class="btn">Bib</summary><pre>{bibtex}</pre></details>}</div>
   </div>
 </article>
 <style>
-.pub{display:grid;grid-template-columns:220px 1fr;gap:1.5rem;padding-block:1.5rem;border-bottom:1px solid var(--border);align-items:start}.pub-side{width:220px;height:150px;display:flex;align-items:center;justify-content:center}.teaser{width:100%;height:100%;object-fit:contain;border-radius:var(--radius)}.placeholder{width:100%;height:100%;display:grid;place-items:center;color:var(--text-muted);font-size:1.3rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius)}.authors{font-size:.925rem;margin-top:.3rem}.tldr{font-size:.925rem;margin-top:.55rem;max-width:68ch}.links{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.7rem}.badge{cursor:default}.links details{display:inline}.links details p,.links pre{margin-top:.7rem;background:var(--surface);padding:.7rem;max-width:60ch;white-space:pre-wrap}summary{cursor:pointer;list-style:none}@media(max-width:640px){.pub{grid-template-columns:1fr}.pub-side{width:100%;max-width:320px;height:180px}}
+.pub{display:grid;grid-template-columns:220px 1fr;gap:1.5rem;padding-block:1.5rem;border-bottom:1px solid var(--border);align-items:start}.pub-side{width:220px;height:150px;display:flex;align-items:center;justify-content:center}.teaser{width:100%;height:100%;object-fit:contain;border-radius:var(--radius)}.placeholder{width:100%;height:100%;display:grid;place-items:center;color:var(--text-muted);font-size:1.3rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius)}.authors{font-size:.925rem;margin-top:.3rem}.contribution{font-size:.8rem;color:var(--text-muted);margin-top:.15rem}.tldr{font-size:.925rem;margin-top:.55rem;max-width:68ch}.links{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.7rem}.badge{cursor:default}.links details{display:inline}.links details p,.links pre{margin-top:.7rem;background:var(--surface);padding:.7rem;max-width:60ch;white-space:pre-wrap}summary{cursor:pointer;list-style:none}@media(max-width:640px){.pub{grid-template-columns:1fr}.pub-side{width:100%;max-width:320px;height:180px}}
 </style>

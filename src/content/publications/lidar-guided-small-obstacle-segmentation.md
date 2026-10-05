@@ -10,7 +10,7 @@ authors:
 venue: "IEEE/RSJ IROS 2020"
 year: 2020
 selected: true
-preview: "/publications/lidar-small-obstacle.gif"
+preview: "https://raw.githubusercontent.com/small-obstacle-dataset/small-obstacle-dataset.github.io/master/images/index/test_banner.gif"
 tldr: "Uses LiDAR guidance to improve visual segmentation of small obstacles for robot navigation."
 links:
   arxiv: "https://arxiv.org/abs/2003.05970"

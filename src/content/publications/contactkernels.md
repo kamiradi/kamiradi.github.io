@@ -13,5 +13,6 @@ venue: "Under review"
 year: 2026
 selected: true
 tldr: "Uses sensed contact to adapt sampling-based MPC proposals, improving contact-rich insertion under uncertainty."
-links: {}
+links:
+  arxiv: "https://arxiv.org/abs/2610.23887"
 ---

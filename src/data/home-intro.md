@@ -1,4 +1,4 @@
-I am a final-year PhD student in Robot Learning at the University of Edinburgh, advised by Subramanian Ramamoorthy and Steve Tonneau. My research focuses on enabling robots to reliably perform contact-rich manipulation tasks under uncertainty.
+I am a final-year PhD student in Robot Learning at the University of Edinburgh, advised by [Subramanian Ramamoorthy](https://assistive-autonomy.ed.ac.uk/) and [Steve Tonneau](https://stonneau.github.io/). My research focuses on enabling robots to reliably perform contact-rich manipulation tasks under uncertainty.
 
 I am particularly interested in how robots can use **physical contact as Bayesian evidence** about the world. While vision provides broad information about the environment, contact provides local and precise information about geometry, pose, and the state of an interaction. My research explores how these complementary observations can be combined to update beliefs about the environment and improve both perception and control.
 
@@ -6,4 +6,4 @@ A central part of my work is Bayesian inference for robotics. I use Monte Carlo 
 
 I also study how the resulting posterior beliefs can directly inform robot actions. My work combines probabilistic inference with sampling-based planning and control, using contact information not only to estimate the world but also to adapt how a robot explores and interacts with it.
 
-Overall, my research aims to close the loop between perception, physical interaction, probabilistic inference, and control to make robotic manipulation more robust under uncertainty.
+Overall, my research aims to close the loop between perception and physical interaction, using tools from simulation-based inference and control to make robotic manipulation more robust under uncertainty.

@@ -34,8 +34,8 @@ jobs:
 
           # Figure crops based on the first-page PDF layout, excluding captions.
           papers = [
-              ("2610.23887", "contactkernels-fig1.png", (315, 169, 554, 321)),
-              ("2607.24959", "amortising-trajectory-optimisation-fig1.png", (53, 168, 301, 295)),
+              ("2610.23887", "contactkernels-fig1.png", (561, 299, 985, 574)),
+              ("2607.24959", "amortising-trajectory-optimisation-fig1.png", (94, 299, 534, 526)),
           ]
           for arxiv_id, filename, bounds in papers:
               request = urllib.request.Request(

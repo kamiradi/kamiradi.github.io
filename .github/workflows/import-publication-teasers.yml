@@ -1,0 +1,78 @@
+name: Import publication teaser figures
+
+on:
+  push:
+    branches: [astro-redesign]
+    paths:
+      - '.github/workflows/import-publication-teasers.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-teasers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: astro-redesign
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install PDF tools
+        run: python -m pip install --quiet pymupdf
+      - name: Extract Figure 1 from both papers
+        run: |
+          python - <<'PY'
+          import urllib.request
+          import fitz
+          from pathlib import Path
+
+          out = Path("public/publications")
+          out.mkdir(parents=True, exist_ok=True)
+
+          # Figure crops based on the first-page PDF layout, excluding captions.
+          papers = [
+              ("2610.23887", "contactkernels-fig1.png", (315, 169, 554, 321)),
+              ("2607.24959", "amortising-trajectory-optimisation-fig1.png", (53, 168, 301, 295)),
+          ]
+          for arxiv_id, filename, bounds in papers:
+              request = urllib.request.Request(
+                  f"https://arxiv.org/pdf/{arxiv_id}",
+                  headers={"User-Agent": "Mozilla/5.0"},
+              )
+              pdf_data = urllib.request.urlopen(request, timeout=90).read()
+              pdf = fitz.open(stream=pdf_data, filetype="pdf")
+              page = pdf[0]
+              # Screenshot coordinates above use a 1088px-wide page, so
+              # transform them to the actual PDF coordinate system.
+              sx, sy = page.rect.width / 1088, page.rect.height / 1408
+              clip = fitz.Rect(bounds[0]*sx, bounds[1]*sy, bounds[2]*sx, bounds[3]*sy)
+              pix = page.get_pixmap(matrix=fitz.Matrix(3,3), clip=clip, alpha=False)
+              pix.save(out / filename)
+              print(f"Saved {filename}: {pix.width}x{pix.height}")
+          PY
+      - name: Update publication previews
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          for filename, preview in [
+              ("contactkernels.md", "/publications/contactkernels-fig1.png"),
+              ("amortising-trajectory-optimisation.md", "/publications/amortising-trajectory-optimisation-fig1.png"),
+          ]:
+              path = Path("src/content/publications") / filename
+              content = path.read_text()
+              if "preview:" not in content:
+                  content = content.replace("selected: true\n", f'selected: true\npreview: "{preview}"\n', 1)
+                  path.write_text(content)
+          PY
+      - name: Commit teaser assets directly to default branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/publications/contactkernels-fig1.png public/publications/amortising-trajectory-optimisation-fig1.png src/content/publications/contactkernels.md src/content/publications/amortising-trajectory-optimisation.md
+          if ! git diff --cached --quiet; then
+            git commit -m "Add local Figure 1 teasers for ContactKernels and Amortising Trajectory Optimisation"
+            git push origin HEAD:astro-redesign
+          fi

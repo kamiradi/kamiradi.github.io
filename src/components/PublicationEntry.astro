@@ -2,16 +2,25 @@
 const { publication, showSlidesEmbed = false } = Astro.props;
 const {key,title,authors,venue,year,preview,tldr,badge,links,abstract,bibtex}=publication.data;
 const hasEqualContribution=authors.some(a=>a.equal);
+const underReview = /under review/i.test(venue);
+const venueRibbon = underReview ? 'Under review' : (venue.match(/\bIROS\s*20\d{2}\b/i)?.[0] ?? venue.split(',')[0].trim());
 ---
 <article class="pub" id={key}>
-  <div class="pub-side">{preview ? <img class="teaser" src={preview} alt={`${title} preview`} loading="lazy"/> : <div class="placeholder">{year}</div>}</div>
+  <div class="pub-side">
+    {preview ? (
+      <div class="teaser-wrap">
+        <img class="teaser" src={preview} alt={`${title} preview`} loading="lazy"/>
+        <span class:list={['venue-ribbon', {'venue-ribbon--review': underReview}]} title={venue}>{venueRibbon}</span>
+      </div>
+    ) : <div class="placeholder">{year}</div>}
+  </div>
   <div>
     <h3>{title}</h3>
     <p class="authors">{authors.map((a,i)=><span>{a.self?<strong>{a.name}</strong>:a.name}{a.equal?'*':''}{i<authors.length-1?', ':''}</span>)}</p>
     {hasEqualContribution&&<p class="contribution">* Equal contribution</p>}
     <p class="muted"><em>{venue}</em></p>
     {tldr&&<p class="tldr"><strong>TL;DR:</strong> {tldr}</p>}
-    <div class="links">{links.arxiv&&<a class="btn" href={links.arxiv}>arXiv</a>}{links.code&&<a class="btn" href={links.code}>Code</a>}{links.website&&<a class="btn" href={links.website}>Webpage</a>}{links.slides&&<a class="btn" href={links.slides}>Slides</a>}{links.workshop&&<a class="btn" href={links.workshop}>ICRA 2026 Workshop</a>}{badge&&<span class="btn badge">{badge}</span>}{abstract&&<details><summary class="btn">Abs</summary><p>{abstract}</p></details>}{bibtex&&<details><summary class="btn">Bib</summary><pre>{bibtex}</pre></details>}</div>
+    <div class="links">{links.arxiv&&<a class="btn btn-arxiv" href={links.arxiv}>arXiv</a>}{links.code&&<a class="btn btn-code" href={links.code}>Code</a>}{links.website&&<a class="btn btn-webpage" href={links.website}>Webpage</a>}{links.slides&&<a class="btn btn-slides" href={links.slides}>Slides</a>}{links.workshop&&<a class="btn btn-workshop" href={links.workshop}>ICRA 2026 Workshop</a>}{badge&&<span class="btn badge btn-venue">{badge}</span>}{abstract&&<details><summary class="btn btn-utility">Abs</summary><p>{abstract}</p></details>}{bibtex&&<details><summary class="btn btn-utility">Bib</summary><pre>{bibtex}</pre></details>}</div>
     {showSlidesEmbed && links.slides && (
       <div class="slides-embed">
         <iframe
@@ -29,5 +38,97 @@ const hasEqualContribution=authors.some(a=>a.equal);
   </div>
 </article>
 <style>
-.pub{display:grid;grid-template-columns:220px 1fr;gap:1.5rem;padding-block:1.5rem;border-bottom:1px solid var(--border);align-items:start}.pub-side{width:220px;height:150px;display:flex;align-items:center;justify-content:center}.teaser{width:100%;height:100%;object-fit:contain;border-radius:var(--radius)}.placeholder{width:100%;height:100%;display:grid;place-items:center;color:var(--text-muted);font-size:1.3rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius)}.authors{font-size:.925rem;margin-top:.3rem}.contribution{font-size:.8rem;color:var(--text-muted);margin-top:.15rem}.tldr{font-size:.925rem;margin-top:.55rem;max-width:68ch}.links{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.7rem}.slides-embed{margin-top:1rem;width:100%;max-width:576px;aspect-ratio:48/35}.slides-embed iframe{display:block;width:100%;height:100%;border:0}.badge{cursor:default}.links details{display:inline}.links details p,.links pre{margin-top:.7rem;background:var(--surface);padding:.7rem;max-width:60ch;white-space:pre-wrap}summary{cursor:pointer;list-style:none}@media(max-width:640px){.pub{grid-template-columns:1fr}.pub-side{width:100%;max-width:320px;height:180px}}
+  .pub {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 1.5rem;
+    padding-block: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+  .pub-side { width: 220px; height: 150px; }
+  .teaser-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: var(--radius);
+  }
+  .teaser { width: 100%; height: 100%; object-fit: contain; }
+  .venue-ribbon {
+    position: absolute;
+    z-index: 1;
+    top: 19px;
+    right: -46px;
+    width: 160px;
+    padding: .2rem .3rem;
+    transform: rotate(45deg);
+    background: #23466e;
+    color: #fff;
+    font-size: .71rem;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: .015em;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .22);
+    pointer-events: none;
+  }
+  .venue-ribbon--review { background: #475569; }
+  .placeholder {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    color: var(--text-muted);
+    font-size: 1.3rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+  .authors { font-size: .925rem; margin-top: .3rem; }
+  .contribution { font-size: .8rem; color: var(--text-muted); margin-top: .15rem; }
+  .tldr { font-size: .925rem; margin-top: .55rem; max-width: 68ch; }
+  .links { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .7rem; }
+  .links .btn {
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background: var(--btn-bg, #475569);
+    color: #fff;
+    font-weight: 600;
+    transition: background-color .15s ease, transform .15s ease;
+  }
+  .links .btn-arxiv { --btn-bg: #a61b1b; --btn-hover: #871515; }
+  .links .btn-code { --btn-bg: #24292f; --btn-hover: #39424c; }
+  .links .btn-webpage { --btn-bg: #0f766e; --btn-hover: #115e59; }
+  .links .btn-slides { --btn-bg: #4338ca; --btn-hover: #3730a3; }
+  .links .btn-workshop { --btn-bg: #7e22ce; --btn-hover: #6b21a8; }
+  .links .btn-venue { --btn-bg: #1d4ed8; }
+  .links .btn-utility { --btn-bg: #475569; --btn-hover: #334155; }
+  .links a.btn:hover,
+  .links details summary.btn:hover {
+    background: var(--btn-hover, var(--btn-bg));
+    color: #fff;
+    text-decoration: none;
+    transform: translateY(-1px);
+  }
+  .links a.btn:focus-visible,
+  .links details summary.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .links .badge { cursor: default; }
+  .links .badge:hover { background: var(--btn-bg); }
+  .links details { display: inline; }
+  .links details p,
+  .links pre {
+    margin-top: .7rem;
+    background: var(--surface);
+    padding: .7rem;
+    max-width: 60ch;
+    white-space: pre-wrap;
+  }
+  summary { cursor: pointer; list-style: none; }
+  .slides-embed { margin-top: 1rem; width: 100%; max-width: 576px; aspect-ratio: 48/35; }
+  .slides-embed iframe { display: block; width: 100%; height: 100%; border: 0; }
+  @media (max-width: 640px) {
+    .pub { grid-template-columns: 1fr; }
+    .pub-side { width: 100%; max-width: 320px; height: 180px; }
+  }
 </style>

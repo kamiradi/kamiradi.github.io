@@ -17,4 +17,5 @@ preview: "/publications/amortising-trajectory-optimisation-fig1.png"
 tldr: "Amortises contact-rich trajectory optimisation into a residual MPC policy using implicit contact differentiation."
 links:
   arxiv: "https://arxiv.org/abs/2607.24959"
+  slides: "https://slides.com/adityakami/amorto"
 ---

@@ -16,4 +16,5 @@ preview: "/publications/contactkernels-fig1.png"
 tldr: "Uses sensed contact to adapt sampling-based MPC proposals, improving contact-rich insertion under uncertainty."
 links:
   arxiv: "https://arxiv.org/abs/2610.23887"
+  slides: "https://slides.com/adityakami/contactkernels"
 ---

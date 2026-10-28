@@ -7,3 +7,5 @@ A central part of my work is Bayesian inference for robotics. I use Monte Carlo 
 I also study how the resulting posterior beliefs can directly inform robot actions. My work combines probabilistic inference with sampling-based planning and control, using contact information not only to estimate the world but also to adapt how a robot explores and interacts with it.
 
 Overall, my research aims to close the loop between perception and physical interaction, using tools from simulation-based inference and control to make robotic manipulation more robust under uncertainty.
+
+For a more detailed description of the projects I have been working on, please see the slides linked under the corresponding project entries below.
